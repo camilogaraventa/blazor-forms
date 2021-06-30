@@ -1,0 +1,16 @@
+﻿@page "/examples/1"
+
+<EditForm Model=_model OnSubmit="FormSubmit">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <InputText class="form-control" id="name" @bind-Value=_model.Name />
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</EditForm>
+
+<ul>
+    @foreach (string message in _messages)
+    {
+        <li>@message</li>
+    }
+</ul>
