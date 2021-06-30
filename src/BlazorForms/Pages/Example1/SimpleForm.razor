@@ -8,9 +8,4 @@
     <input type="submit" value="Submit" class="btn btn-primary" />
 </EditForm>
 
-<ul>
-    @foreach (string message in _messages)
-    {
-        <li>@message</li>
-    }
-</ul>
+<DisplayMessages Messages="_messages" />

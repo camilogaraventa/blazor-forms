@@ -1,0 +1,9 @@
+﻿@if (Messages != null && Messages.Any())
+{
+    <ul>
+        @foreach (string message in Messages)
+        {
+            <li><pre>@message</pre></li>
+        }
+    </ul>
+}

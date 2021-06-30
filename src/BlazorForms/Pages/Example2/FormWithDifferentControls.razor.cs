@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace BlazorForms.Pages.Example1
+namespace BlazorForms.Pages.Example2
 {
-    public partial class SimpleForm
+    public partial class FormWithDifferentControls
     {
         private Model _model;
         private List<String> _messages;
@@ -20,7 +20,7 @@ namespace BlazorForms.Pages.Example1
 
         private void FormSubmit(EditContext editContext)
         {
-            _messages.Add($"{DateTime.Now} form submitted.{Environment.NewLine}{JsonSerializer.Serialize(_model, new JsonSerializerOptions() { WriteIndented = true })}");
+            _messages.Add($"{DateTime.Now} form submitted.{Environment.NewLine}{JsonSerializer.Serialize(_model,new JsonSerializerOptions(){WriteIndented=true})}");
         }
     }
 }

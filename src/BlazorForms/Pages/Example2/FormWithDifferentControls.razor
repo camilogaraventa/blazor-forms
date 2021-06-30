@@ -1,0 +1,39 @@
+﻿@page "/examples/2"
+
+<EditForm Model=_model OnSubmit="FormSubmit">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <InputText class="form-control" id="name" @bind-Value=_model.Name />
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <InputTextArea class="form-control" id="description" @bind-Value=_model.Description />
+    </div>
+    <div class="form-group">
+        <label for="active">Active:</label>
+        <InputCheckbox id="active" @bind-Value=_model.Active />
+    </div>
+    <div class="form-group">
+        <label for="join-date">Join date:</label>
+        <InputDate class="form-control" id="join-date" @bind-Value=_model.JoinDate />
+    </div>
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <InputNumber class="form-control" id="age" @bind-Value=_model.Age />
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight:</label>
+        <InputNumber class="form-control" id="weight " @bind-Value=_model.Weight />
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <InputSelect class="form-control" @bind-Value=_model.Category>
+            <option value="Pending">Pending</option>
+            <option value="Active">Active</option>
+            <option value="Suspended">Suspended</option>
+        </InputSelect>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</EditForm>
+
+<DisplayMessages Messages="_messages" />
