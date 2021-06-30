@@ -22,5 +22,19 @@ namespace BlazorForms.Pages.Example2
         {
             _messages.Add($"{DateTime.Now} form submitted.{Environment.NewLine}{JsonSerializer.Serialize(_model,new JsonSerializerOptions(){WriteIndented=true})}");
         }
+
+        private void InitializeModel()
+        {
+            _model = new Model
+            {
+                Active = true,
+                Age = 35,
+                Category = Category.Suspended,
+                Description = "model description",
+                JoinDate = DateTime.Today.AddDays(-10),
+                Name = "model name",
+                Weight = 70.25m
+            };
+        }
     }
 }
