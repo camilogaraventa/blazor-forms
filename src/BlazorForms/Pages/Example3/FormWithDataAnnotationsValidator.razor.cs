@@ -18,10 +18,10 @@ namespace BlazorForms.Pages.Example3
             _messages = new List<String>();
         }
 
-        private async Task OnValidFormSubmit()
+        private Task OnValidFormSubmit()
         {
-            await Task.Delay(1000);
             _messages.Add($"{DateTime.Now} valid form submitted.{Environment.NewLine}{JsonSerializer.Serialize(_model, new JsonSerializerOptions() { WriteIndented = true })}");
+            return Task.CompletedTask;
         }
 
         private void OnInvalidFormSubmit(EditContext editContext)
