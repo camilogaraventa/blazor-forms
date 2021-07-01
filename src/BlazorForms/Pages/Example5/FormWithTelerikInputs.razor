@@ -1,0 +1,36 @@
+﻿@page "/examples/5"
+
+<EditForm Model=_model OnValidSubmit="OnValidFormSubmit" OnInvalidSubmit="OnInvalidFormSubmit">
+    <Blazored.FluentValidation.FluentValidationValidator />
+    <TelerikValidationSummary />
+    <div class="form-group">
+        <TelerikTextBox Label="Name:"
+                        Id="name"
+                        @bind-Value="_model.Name"
+                        Class="form-control"
+                        Width="100%" />
+        <TelerikValidationMessage For="() => _model.Name" />
+        <TelerikValidationTooltip For="@(() => _model.Name)" TargetSelector="#name" />
+    </div>
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <TelerikNumericTextBox Id="age"
+                               Decimals="0"
+                               @bind-Value="_model.Age"
+                               Class="form-control" />
+        <TelerikValidationMessage For="() => _model.Age" />
+        <TelerikValidationTooltip For="@(() => _model.Age)" TargetSelector="#age" />
+    </div>
+    <div class="form-group">
+        <TelerikTextBox Label="Address:"
+                        Id="address"
+                        @bind-Value="_model.Nested.Address"
+                        Class="form-control"
+                        Width="100%" />
+        <TelerikValidationMessage For="() => _model.Nested.Address" />
+        <TelerikValidationTooltip For="@(() => _model.Nested.Address)" TargetSelector="#address" />
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</EditForm>
+
+<DisplayMessages Messages="_messages" />
