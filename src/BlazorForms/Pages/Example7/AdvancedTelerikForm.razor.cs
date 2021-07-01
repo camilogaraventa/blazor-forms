@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace BlazorForms.Pages.Example4
+namespace BlazorForms.Pages.Example7
 {
-    public partial class FormWIthFluentValidationValidator
+    public partial class AdvancedTelerikForm
     {
         private Model _model;
         private List<String> _messages;
@@ -37,7 +37,7 @@ namespace BlazorForms.Pages.Example4
                 Name = "model name",
                 Nested = new NestedModel
                 {
-                    Address = "Adress"
+                    Address = "model adress"
                 }
             };
         }

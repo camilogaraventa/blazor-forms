@@ -21,6 +21,7 @@
         <ValidationMessage For="() => _model.Nested.Address" />
     </div>
     <input type="submit" value="Submit" class="btn btn-primary" />
+    <input type="button" value="Initialize" class="btn btn-secondary" @onclick="InitializeModel" />
 </EditForm>
 
 <DisplayMessages Messages="_messages" />

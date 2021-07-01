@@ -1,0 +1,17 @@
+﻿@page "/examples/7"
+
+<h2>Telerik form with custom buttons and some form fields with custom templates</h2>
+
+<TelerikForm Model="@_model"
+             OnValidSubmit="OnValidFormSubmit"
+             OnInvalidSubmit="OnInvalidFormSubmit">
+    <FormValidation>
+        <Blazored.FluentValidation.FluentValidationValidator />
+    </FormValidation>
+    <FormButtons>
+        <TelerikButton ButtonType="ButtonType.Submit" Primary="true">Submit</TelerikButton>
+        <TelerikButton ButtonType="ButtonType.Button" OnClick="@InitializeModel">Initialize</TelerikButton>
+    </FormButtons>
+</TelerikForm>
+
+<DisplayMessages Messages="_messages" />
