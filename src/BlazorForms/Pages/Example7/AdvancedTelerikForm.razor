@@ -3,11 +3,23 @@
 <h2>Telerik form with custom buttons and some form fields with custom templates</h2>
 
 <TelerikForm Model="@_model"
+             ValidationMessageType="FormValidationMessageType.Tooltip"
              OnValidSubmit="OnValidFormSubmit"
              OnInvalidSubmit="OnInvalidFormSubmit">
     <FormValidation>
         <Blazored.FluentValidation.FluentValidationValidator />
     </FormValidation>
+    <FormItems>
+        <FormItem Field="@nameof(Model.Name)"></FormItem>
+        <FormItem Field="@nameof(Model.Age)">
+            <Template>
+                <label for="age" class="k-label k-form-label">Age:</label>
+                <TelerikNumericTextBox Id="age" @bind-Value="@_model.Age"></TelerikNumericTextBox>
+                <TelerikValidationMessage For="@(() => _model.Age)"></TelerikValidationMessage>
+            </Template>
+        </FormItem>
+        <FormItem LabelText="Address" Field="@(nameof(Model.Nested)+"."+nameof(NestedModel.Address))"></FormItem>
+    </FormItems>
     <FormButtons>
         <TelerikButton ButtonType="ButtonType.Submit" Primary="true">Submit</TelerikButton>
         <TelerikButton ButtonType="ButtonType.Button" OnClick="@InitializeModel">Initialize</TelerikButton>
