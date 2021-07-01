@@ -1,0 +1,24 @@
+﻿<div class="form-group">
+    @if (!string.IsNullOrWhiteSpace(this.Label))
+    {
+        <label id="@Labeld" for="@Txtld">
+            @Label
+        </label>
+    }
+
+    <TelerikTextBox Name="@Name"
+                    Id="@Txtld"
+                    Class="form-control"
+                    Value="@Value"
+                    ValueChanged="@ValueChanged"
+                    ValueExpression="@ValueExpression"
+                    PlaceHolder="@Placeholder"
+                    @attributes=AllOtherAttributes>
+    </TelerikTextBox>
+
+
+    @if (EditContext != null && ValueExpression != null)
+    {
+        <ValidationMessage For="@ValueExpression" />
+    }
+</div>

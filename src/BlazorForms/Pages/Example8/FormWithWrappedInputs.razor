@@ -1,0 +1,20 @@
+﻿@page "/examples/8"
+
+<h2>Form using telerik inputs</h2>
+
+<EditForm Model=_model OnValidSubmit="OnValidFormSubmit" OnInvalidSubmit="OnInvalidFormSubmit">
+    <Blazored.FluentValidation.FluentValidationValidator />
+    <TelerikValidationSummary />
+    <MyInputText Id="name"
+                 Label="Name:"
+                 @bind-Value="_model.Name" />
+    <MyInputNumber Id="age"
+                   Label="Age:"
+                   @bind-Value="_model.Age"/>
+    <MyInputText Id="address"
+                 Label="Address:"
+                 @bind-Value="_model.Nested.Address" />
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</EditForm>
+
+<DisplayMessages Messages="_messages" />
