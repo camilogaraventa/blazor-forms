@@ -1,7 +1,7 @@
-﻿@page "/examples/3"
+﻿@page "/examples/4"
 
 <EditForm Model=_model OnValidSubmit="OnValidFormSubmit" OnInvalidSubmit="OnInvalidFormSubmit">
-    <DataAnnotationsValidator />
+    <Blazored.FluentValidation.FluentValidationValidator />
     <ValidationSummary />
     <div class="form-group">
         <label for="name">Name:</label>
