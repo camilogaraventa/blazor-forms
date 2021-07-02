@@ -10,10 +10,14 @@
                  @bind-Value="_model.Name" />
     <MyInputNumber Id="age"
                    Label="Age:"
-                   @bind-Value="_model.Age"/>
+                   @bind-Value="_model.Age" />
     <MyInputText Id="address"
                  Label="Address:"
                  @bind-Value="_model.Nested.Address" />
+
+    <MyInputPassword Id="password"
+                 Label="Password:"
+                 @bind-Value="_model.Password" />
     <input type="submit" value="Submit" class="btn btn-primary" />
 </EditForm>
 

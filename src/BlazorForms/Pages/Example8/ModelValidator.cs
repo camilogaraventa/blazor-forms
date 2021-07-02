@@ -8,6 +8,7 @@ namespace BlazorForms.Pages.Example8
         {
             RuleFor(x => x.Name).NotEmpty().MaximumLength(50);
             RuleFor(x => x.Age).InclusiveBetween(18, 80);
+            RuleFor(x => x.Password).NotEmpty().MaximumLength(20);
             RuleFor(x => x.Nested).SetValidator(new NestedModelValidator());
         }
     }

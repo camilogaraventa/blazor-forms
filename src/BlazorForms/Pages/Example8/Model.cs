@@ -13,6 +13,8 @@ namespace BlazorForms.Pages.Example8
 
         public string Name { get; set; }
 
+        public String Password { get; set; }
+
         public NestedModel Nested { get; set; }
     }
 
