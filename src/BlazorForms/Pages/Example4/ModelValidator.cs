@@ -8,11 +8,11 @@ namespace BlazorForms.Pages.Example4
 {
     public class ModelValidator : AbstractValidator<Model>
     {
-        public ModelValidator()
+        public ModelValidator(IValidator<NestedModel> nestedModelValidator)
         {
             RuleFor(x => x.Name).NotEmpty().MaximumLength(50);
             RuleFor(x => x.Age).InclusiveBetween(18, 80);
-            RuleFor(x => x.Nested).SetValidator(new NestedModelValidator());
+            RuleFor(x => x.Nested).SetValidator(nestedModelValidator);
         }
     }
 
